@@ -1,0 +1,13 @@
+[
+ {"arquivo": "clip2.mp4", "inicio": 0.5, "fim": 4.8, "tipo": "abertura", "nota": "pôr do sol na praia, título"},
+ {"arquivo": "clip5.mp4", "inicio": 0.0, "fim": 3.0, "tipo": "navegacao", "nota": "kite no céu, preparação na areia"},
+ {"arquivo": "clip6.mp4", "inicio": 2.0, "fim": 5.6, "tipo": "salto", "lento_de": 4.2, "lento_ate": 5.2, "nota": "saída contra o sol, spray"},
+ {"arquivo": "clip7.mp4", "inicio": 1.0, "fim": 3.6, "tipo": "salto", "lento_de": 1.3, "lento_ate": 2.6, "nota": "curva com muralha de água"},
+ {"arquivo": "clip3.mp4", "inicio": 0.0, "fim": 2.6, "tipo": "navegacao", "nota": "navegação com spray"},
+ {"arquivo": "clip8.mp4", "inicio": 4.8, "fim": 7.2, "tipo": "salto", "lento_de": 5.4, "lento_ate": 6.6, "nota": "pop: prancha sai da água"},
+ {"arquivo": "clip3.mp4", "inicio": 12.6, "fim": 15.6, "tipo": "navegacao", "nota": "vindo para a câmera"},
+ {"arquivo": "clip7.mp4", "inicio": 4.4, "fim": 7.0, "tipo": "navegacao", "nota": "navegando contra o sol"},
+ {"arquivo": "clip3.mp4", "inicio": 6.6, "fim": 9.6, "tipo": "climax", "lento_de": 6.8, "lento_ate": 8.2, "nota": "melhor momento: muralha de spray"},
+ {"arquivo": "clip1.mp4", "inicio": 0.0, "fim": 5.0, "tipo": "por_do_sol", "nota": "pôr do sol entre as árvores"},
+ {"arquivo": "clip2.mp4", "inicio": 12.4, "fim": 17.0, "tipo": "encerramento", "nota": "céu laranja, texto final"}
+]
