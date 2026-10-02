@@ -32,7 +32,7 @@ FORMATOS = {"horizontal": (1920, 1080), "vertical": (1080, 1920)}
 
 # Transição usada ao ENTRAR em cada tipo de trecho
 TRANSICOES = {"abertura": "fade", "navegacao": "smoothleft", "salto": "smoothup",
-              "climax": "fadewhite", "por_do_sol": "fade", "encerramento": "fadeblack"}
+              "climax": "fadewhite", "por_do_sol": "fade", "encerramento": "fade"}
 
 
 # ---------------------------------------------------------------- roteiro
@@ -198,7 +198,8 @@ def renderizar_trecho(trecho, indice, largura, altura, tem_audio, fps_origem, su
     if lento:
         a = max(0.0, float(trecho["lento_de"]) - ini)
         b = min(dur, float(trecho["lento_ate"]) - ini)
-        cortes = [(0, a, 1.0), (a, b, 0.5), (b, dur, 1.0)]
+        vel_lenta = float(trecho.get("velocidade", 0.5))
+        cortes = [(0, a, 1.0), (a, b, vel_lenta), (b, dur, 1.0)]
     else:
         cortes = [(0, dur, 1.0)]
     cortes = [c for c in cortes if c[1] - c[0] > 0.05]
@@ -218,7 +219,12 @@ def renderizar_trecho(trecho, indice, largura, altura, tem_audio, fps_origem, su
         if tem_audio:
             cadeia_a = f"[as{k}]atrim={x:.3f}:{y:.3f},asetpts=PTS-STARTPTS"
             if vel != 1.0:
-                cadeia_a += f",atempo={vel},volume=0.6"
+                tempos, v = [], vel
+                while v < 0.5:  # atempo aceita no mínimo 0.5 por estágio
+                    tempos.append("atempo=0.5")
+                    v /= 0.5
+                tempos.append(f"atempo={v:.4f}")
+                cadeia_a += "," + ",".join(tempos) + ",volume=0.6"
             filtros.append(cadeia_a + f"[a{k}]")
         else:
             filtros.append(f"anullsrc=r=48000:cl=stereo,atrim=0:{(y - x) / vel:.3f}[a{k}]")
