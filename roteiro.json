@@ -31,21 +31,11 @@
   "nota": "curva com muralha de água"
  },
  {
-  "arquivo": "clip8.mp4",
-  "inicio": 4.3,
-  "fim": 7.4,
-  "tipo": "salto",
-  "lento_de": 5.0,
-  "lento_ate": 6.6,
-  "velocidade": 0.5,
-  "nota": "salto na água 1, até pousar"
- },
- {
   "arquivo": "clip3.mp4",
-  "inicio": 12.6,
-  "fim": 15.6,
+  "inicio": 16.5,
+  "fim": 19.5,
   "tipo": "navegacao",
-  "nota": "vindo para a câmera"
+  "nota": "vindo para a câmera (sem repetir o trecho do salto)"
  },
  {
   "arquivo": "clip7.mp4",
@@ -57,12 +47,12 @@
  {
   "arquivo": "clip3.mp4",
   "inicio": 6.4,
-  "fim": 10.8,
+  "fim": 12.6,
   "tipo": "climax",
   "lento_de": 7.2,
-  "lento_ate": 10.2,
+  "lento_ate": 10.6,
   "velocidade": 0.5,
-  "nota": "salto na água 2: decolagem no spray até cair na água"
+  "nota": "salto na água: decolagem no spray, pouso e saída navegando"
  },
  {
   "arquivo": "clip1.mp4",
