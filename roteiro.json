@@ -1,12 +1,81 @@
 [
- {"arquivo": "clip2.mp4", "inicio": 0.5, "fim": 4.8, "tipo": "abertura", "nota": "pôr do sol na praia, título"},
- {"arquivo": "clip5.mp4", "inicio": 0.0, "fim": 3.0, "tipo": "salto", "lento_de": 0.6, "lento_ate": 2.2, "velocidade": 0.4, "nota": "salto fora da água: o kite levanta da areia"},
- {"arquivo": "clip6.mp4", "inicio": 2.0, "fim": 5.6, "tipo": "navegacao", "nota": "saída contra o sol, spray"},
- {"arquivo": "clip7.mp4", "inicio": 1.0, "fim": 3.6, "tipo": "navegacao", "nota": "curva com muralha de água"},
- {"arquivo": "clip8.mp4", "inicio": 4.3, "fim": 7.0, "tipo": "salto", "lento_de": 5.0, "lento_ate": 6.3, "velocidade": 0.4, "nota": "salto na água 1"},
- {"arquivo": "clip3.mp4", "inicio": 12.6, "fim": 15.6, "tipo": "navegacao", "nota": "vindo para a câmera"},
- {"arquivo": "clip7.mp4", "inicio": 4.4, "fim": 7.0, "tipo": "navegacao", "nota": "navegando contra o sol"},
- {"arquivo": "clip3.mp4", "inicio": 6.4, "fim": 9.2, "tipo": "climax", "lento_de": 7.3, "lento_ate": 8.5, "velocidade": 0.35, "nota": "salto na água 2 (spray + ar)"},
- {"arquivo": "clip1.mp4", "inicio": 0.0, "fim": 5.0, "tipo": "por_do_sol", "nota": "pôr do sol entre as árvores"},
- {"arquivo": "clip2.mp4", "inicio": 12.4, "fim": 17.0, "tipo": "encerramento", "nota": "céu laranja, texto final"}
+ {
+  "arquivo": "clip2.mp4",
+  "inicio": 0.5,
+  "fim": 4.8,
+  "tipo": "abertura",
+  "nota": "pôr do sol na praia"
+ },
+ {
+  "arquivo": "clip5.mp4",
+  "inicio": 0.0,
+  "fim": 3.8,
+  "tipo": "salto",
+  "lento_de": 0.4,
+  "lento_ate": 3.2,
+  "velocidade": 0.5,
+  "nota": "salto fora da água: sobe da areia até pousar"
+ },
+ {
+  "arquivo": "clip6.mp4",
+  "inicio": 2.0,
+  "fim": 5.6,
+  "tipo": "navegacao",
+  "nota": "saída contra o sol, spray"
+ },
+ {
+  "arquivo": "clip7.mp4",
+  "inicio": 1.0,
+  "fim": 3.6,
+  "tipo": "navegacao",
+  "nota": "curva com muralha de água"
+ },
+ {
+  "arquivo": "clip8.mp4",
+  "inicio": 4.3,
+  "fim": 7.4,
+  "tipo": "salto",
+  "lento_de": 5.0,
+  "lento_ate": 6.6,
+  "velocidade": 0.5,
+  "nota": "salto na água 1, até pousar"
+ },
+ {
+  "arquivo": "clip3.mp4",
+  "inicio": 12.6,
+  "fim": 15.6,
+  "tipo": "navegacao",
+  "nota": "vindo para a câmera"
+ },
+ {
+  "arquivo": "clip7.mp4",
+  "inicio": 4.4,
+  "fim": 7.0,
+  "tipo": "navegacao",
+  "nota": "navegando contra o sol"
+ },
+ {
+  "arquivo": "clip3.mp4",
+  "inicio": 6.4,
+  "fim": 10.8,
+  "tipo": "climax",
+  "lento_de": 7.2,
+  "lento_ate": 10.2,
+  "velocidade": 0.5,
+  "nota": "salto na água 2: decolagem no spray até cair na água"
+ },
+ {
+  "arquivo": "clip1.mp4",
+  "inicio": 0.0,
+  "fim": 5.0,
+  "tipo": "por_do_sol",
+  "nota": "pôr do sol entre as árvores"
+ },
+ {
+  "arquivo": "clip2.mp4",
+  "inicio": 12.4,
+  "fim": 17.0,
+  "tipo": "encerramento",
+  "nota": "céu laranja, fade final"
+ }
 ]

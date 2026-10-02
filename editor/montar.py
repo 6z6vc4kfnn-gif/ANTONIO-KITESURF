@@ -295,7 +295,7 @@ def montar(plano, formato, args):
     # Títulos
     escala = largura / 1920 if formato == "horizontal" else 1.0
     y_titulo = "(h-text_h)/2-40" if formato == "horizontal" else "h*0.40"
-    camadas = [texto(args.titulo, int(150 * escala), y_titulo, 0.6, 4.8, espacamento=20)]
+    camadas = [texto(args.titulo, int(150 * escala), y_titulo, 0.6, 4.8, espacamento=20)] if args.titulo else []
     if args.subtitulo:
         camadas.append(texto(args.subtitulo, int(54 * escala), y_titulo.replace("-40", "+110") if formato == "horizontal"
                              else "h*0.40+190", 1.2, 4.8, FONTE_FINA))
@@ -303,7 +303,7 @@ def montar(plano, formato, args):
         camadas.append(texto(args.final, int(70 * escala), "(h-text_h)/2" if formato == "horizontal" else "h*0.45",
                              max(0, total - 4.5), total - 0.3, FONTE_FINA))
     fade_final = f"fade=t=out:st={total - 1.2:.3f}:d=1.2"
-    filtros.append(f"{rotulo_v}{','.join(camadas)},{fade_final},format=yuv420p[vfinal]")
+    filtros.append(f"{rotulo_v}{','.join(camadas + [fade_final])},format=yuv420p[vfinal]")
 
     musicas = sorted(p for p in PASTA_MUSICA.glob("*") if p.suffix.lower() in {".mp3", ".m4a", ".wav", ".aac", ".flac", ".ogg"}) \
         if PASTA_MUSICA.exists() else []
@@ -332,7 +332,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--formato", choices=["horizontal", "vertical", "ambos"], default="ambos")
     ap.add_argument("--duracao", type=float, default=75, help="duração alvo em segundos")
-    ap.add_argument("--titulo", default="KITESURF")
+    ap.add_argument("--titulo", default="", help="texto de abertura (vazio = sem texto)")
     ap.add_argument("--subtitulo", default="")
     ap.add_argument("--final", default="")
     ap.add_argument("--volume-original", type=float, default=0.18,

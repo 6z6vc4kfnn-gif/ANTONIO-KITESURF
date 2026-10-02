@@ -10,7 +10,7 @@ pip install opencv-python-headless numpy      # precisa também do ffmpeg
 python3 editor/analisar.py                     # acha saltos, pôr do sol e movimento; gera folhas de contato em analise/
 # 2. (opcional) ajuste os cortes em roteiro.json; sem ele, o roteiro é automático
 python3 editor/trilha.py --duracao 36.6 --acao 3.8 --climax 23.6 --sol 27.5   # trilha sincronizada
-python3 editor/montar.py --suave --volume-original 0.12 --final "vento • mar • pôr do sol"
+python3 editor/montar.py --suave --volume-original 0.12
 ```
 
 Saída: `saida/kitesurf_vertical.mp4` (1080x1920, Reels/Stories/TikTok) e `saida/kitesurf_horizontal.mp4` (1920x1080, YouTube).
