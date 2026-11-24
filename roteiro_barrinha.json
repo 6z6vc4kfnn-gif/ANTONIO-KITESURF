@@ -2,102 +2,141 @@
  {
   "arquivo": "v14.mp4",
   "inicio": 0.0,
-  "fim": 3.0,
+  "fim": 4.2,
   "tipo": "abertura",
-  "nota": "silhueta na beira com o sol laranja e o céu cheio de kites"
+  "nota": "silhueta na beira, sol laranja e céu cheio de kites"
  },
  {
   "arquivo": "v12.mp4",
   "inicio": 0.0,
-  "fim": 1.7,
+  "fim": 1.6,
   "tipo": "por_do_sol",
   "dur_transicao": 0.4,
   "nota": "sol atrás das casas da Barrinha"
  },
  {
+  "arquivo": "v08.mp4",
+  "inicio": 2.2,
+  "fim": 4.8,
+  "tipo": "por_do_sol",
+  "dur_transicao": 0.4,
+  "nota": "vegetação abre para a praia com os kites"
+ },
+ {
+  "arquivo": "v07.mp4",
+  "inicio": 4.6,
+  "fim": 7.6,
+  "tipo": "por_do_sol",
+  "dur_transicao": 0.4,
+  "nota": "entrando no mar com o kite"
+ },
+ {
   "arquivo": "v02.mp4",
   "inicio": 0.2,
-  "fim": 2.623,
+  "fim": 2.78,
   "tipo": "navegacao",
   "nota": "carving com spray"
  },
  {
-  "arquivo": "v03.mp4",
-  "inicio": 0.4,
-  "fim": 2.262,
-  "tipo": "navegacao",
-  "nota": "saída contra o sol"
- },
- {
   "arquivo": "v04.mp4",
   "inicio": 0.0,
-  "fim": 1.862,
+  "fim": 1.98,
   "tipo": "navegacao",
-  "nota": "cortando a água com o sol no horizonte"
+  "nota": "cortando a água com o sol"
  },
  {
-  "arquivo": "v11.mp4",
-  "inicio": 22.3,
-  "fim": 24.994,
+  "arquivo": "v03.mp4",
+  "inicio": 1.0,
+  "fim": 4.68,
   "tipo": "salto",
-  "lento_de": 22.75,
-  "lento_ate": 23.6,
+  "lento_de": 2.0,
+  "lento_ate": 3.9,
   "velocidade": 0.5,
-  "nota": "pop na água contra o sol"
+  "nota": "salto 1: decola 2,0 pousa 3,9"
  },
  {
   "arquivo": "v10.mp4",
   "inicio": 0.2,
-  "fim": 2.062,
+  "fim": 2.78,
   "tipo": "navegacao",
   "nota": "close sorrindo com o pôr do sol"
  },
  {
   "arquivo": "v05.mp4",
-  "inicio": 0.0,
-  "fim": 1.301,
+  "inicio": 4.6,
+  "fim": 7.83,
+  "tipo": "salto",
+  "lento_de": 5.5,
+  "lento_ate": 7.25,
+  "velocidade": 0.5,
+  "nota": "salto 2: decola 5,5 pousa 7,25"
+ },
+ {
+  "arquivo": "v11.mp4",
+  "inicio": 13.3,
+  "fim": 15.28,
   "tipo": "navegacao",
-  "nota": "spray branco"
+  "nota": "carving contra o sol"
+ },
+ {
+  "arquivo": "v11.mp4",
+  "inicio": 22.2,
+  "fim": 24.13,
+  "tipo": "salto",
+  "lento_de": 22.85,
+  "lento_ate": 23.5,
+  "velocidade": 0.5,
+  "nota": "pop: decola 22,85 pousa 23,5"
  },
  {
   "arquivo": "v09.mp4",
-  "inicio": 21.3,
-  "fim": 23.282,
+  "inicio": 2.0,
+  "fim": 3.98,
   "tipo": "navegacao",
-  "nota": "carving com o sol dourado"
+  "nota": "navegando tranquilo no sol"
+ },
+ {
+  "arquivo": "v09.mp4",
+  "inicio": 38.2,
+  "fim": 42.947,
+  "tipo": "salto",
+  "lento_de": 38.95,
+  "lento_ate": 42.0,
+  "velocidade": 0.6,
+  "nota": "salto 3: decola 38,95 pousa 42,0"
+ },
+ {
+  "arquivo": "v02.mp4",
+  "inicio": 11.8,
+  "fim": 17.566,
+  "tipo": "salto",
+  "lento_de": 13.1,
+  "lento_ate": 16.6,
+  "velocidade": 0.6,
+  "nota": "salto 4 (float longo): decola 13,1 pousa 16,6"
  },
  {
   "arquivo": "v01.mov",
-  "inicio": 0.608,
-  "fim": 4.54,
+  "inicio": 0.6,
+  "fim": 4.489,
   "tipo": "climax",
-  "lento_de": 2.85,
-  "lento_ate": 4.3,
-  "velocidade": 0.4,
-  "nota": "SALTO: carving, decolagem, ar e pouso (original 4K)"
+  "lento_de": 2.9,
+  "lento_ate": 4.2,
+  "velocidade": 0.5,
+  "nota": "salto 5 (4K): decola 2,9 pousa 4,2"
  },
  {
-  "arquivo": "f02.jpg",
-  "duracao": 3.0,
-  "tipo": "foto",
-  "movimento": "pan",
-  "pan_de": 0.0,
-  "pan_ate": 0.55,
-  "nota": "kite em arco, linhas até o kiter, sol se pondo"
- },
- {
-  "arquivo": "v15.mp4",
-  "inicio": 12.6,
-  "fim": 15.0,
+  "arquivo": "v07.mp4",
+  "inicio": 10.0,
+  "fim": 14.6,
   "tipo": "por_do_sol",
-  "nota": "câmera desce do céu até o sol no horizonte"
+  "nota": "kite no céu com o pôr do sol"
  },
  {
-  "arquivo": "f03.jpg",
-  "duracao": 3.6,
+  "arquivo": "v13.mp4",
+  "inicio": 18.8,
+  "fim": 22.6,
   "tipo": "encerramento",
-  "movimento": "zoom",
-  "zoom": 0.07,
-  "nota": "praia longa, sol no horizonte, kites; fade final"
+  "nota": "kite desce até o sol no horizonte; fade final"
  }
 ]
