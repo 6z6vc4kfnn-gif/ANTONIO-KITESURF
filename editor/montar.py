@@ -23,6 +23,8 @@ from analisar import EXTENSOES, PASTA_ANALISE, PASTA_VIDEOS, RAIZ
 
 PASTA_SAIDA = RAIZ / "saida"
 PASTA_MUSICA = RAIZ / "musica"
+PASTA_FOTOS = RAIZ / "fotos"
+EXT_FOTOS = {".jpg", ".jpeg", ".png", ".heic", ".webp"}
 TEMP = RAIZ / ".trechos"
 FONTE = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONTE_FINA = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
@@ -30,9 +32,11 @@ FPS = 30
 TRANSICAO = 0.5
 FORMATOS = {"horizontal": (1920, 1080), "vertical": (1080, 1920)}
 
-# Transição usada ao ENTRAR em cada tipo de trecho
-TRANSICOES = {"abertura": "fade", "navegacao": "smoothleft", "salto": "smoothup",
-              "climax": "fadewhite", "por_do_sol": "fade", "encerramento": "fade"}
+# Transição usada ao ENTRAR em cada tipo de trecho: (efeito, duração em s).
+# Ação com cortes curtos (ritmo de reels); pôr do sol com fusões longas.
+TRANSICOES = {"abertura": ("fade", 0.5), "navegacao": ("fade", 0.18), "salto": ("fade", 0.18),
+              "climax": ("fadewhite", 0.3), "por_do_sol": ("fade", 0.6), "encerramento": ("fade", 0.7),
+              "foto": ("fade", 0.5)}
 
 
 # ---------------------------------------------------------------- roteiro
@@ -48,7 +52,13 @@ def carregar_analises():
     return analises
 
 
+def eh_foto(nome):
+    return Path(nome).suffix.lower() in EXT_FOTOS
+
+
 def caminho_video(nome):
+    if eh_foto(nome):
+        return PASTA_FOTOS / nome
     direto = PASTA_VIDEOS / nome
     return direto if direto.exists() else next(PASTA_VIDEOS.rglob(nome))
 
@@ -179,7 +189,9 @@ def roteiro_automatico(analises, duracao_alvo):
 # ---------------------------------------------------------------- renderização
 
 def correcao_de_cor(tipo):
-    base = "eq=contrast=1.08:saturation=1.22:gamma=0.98"
+    if tipo == "foto":  # fotos do celular já vêm tratadas: só um toque de contraste e vinheta
+        return "eq=contrast=1.04:saturation=1.06,vignette=PI/6"
+    base = "eq=contrast=1.06:saturation=1.12:gamma=0.98"
     if tipo in ("abertura", "encerramento", "por_do_sol"):
         quente = "colorbalance=rs=0.06:gs=0.01:bs=-0.07:rm=0.05:bm=-0.05:rh=0.03:bh=-0.03"
     else:
@@ -187,7 +199,36 @@ def correcao_de_cor(tipo):
     return f"{base},{quente},vignette=PI/5"
 
 
+def renderizar_foto(trecho, indice, largura, altura):
+    """Foto com movimento lento (Ken Burns): 'pan' desliza da esquerda p/ direita, 'zoom' aproxima."""
+    origem = caminho_video(trecho["arquivo"])
+    dur = float(trecho["duracao"])
+    saida = TEMP / f"{largura}x{altura}_{indice:03d}.mp4"
+    W, H = largura * 2, altura * 2  # trabalha em 2x para o movimento não "tremer"
+    mov = trecho.get("movimento", "zoom")
+    if mov == "pan":
+        cadeia = (f"scale=-2:{H}:flags=lanczos,"
+                  f"crop={W}:{H}:x='(iw-{W})*{trecho.get('pan_de', 0.0)}+(iw-{W})*"
+                  f"({trecho.get('pan_ate', 0.5)}-{trecho.get('pan_de', 0.0)})*t/{dur}':y=0")
+    else:
+        z = float(trecho.get("zoom", 0.08))
+        cadeia = (f"scale=-2:{H}:flags=lanczos,crop={W}:{H},"
+                  f"scale=w='trunc({W}*(1+{z}*t/{dur})/2)*2':h=-2:eval=frame:flags=lanczos,"
+                  f"crop={W}:{H}")
+    filtro = (f"[0:v]fps={FPS},{cadeia},scale={largura}:{altura}:flags=lanczos,"
+              f"{correcao_de_cor('foto')},setsar=1,format=yuv420p[vout];"
+              f"anullsrc=r=48000:cl=stereo,atrim=0:{dur:.3f}[aout]")
+    cmd = ["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}",
+           "-i", str(origem), "-filter_complex", filtro, "-map", "[vout]", "-map", "[aout]",
+           "-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "17",
+           "-c:a", "aac", "-b:a", "192k", str(saida)]
+    subprocess.run(cmd, check=True)
+    return saida
+
+
 def renderizar_trecho(trecho, indice, largura, altura, tem_audio, fps_origem, suave):
+    if eh_foto(trecho["arquivo"]):
+        return renderizar_foto(trecho, indice, largura, altura)
     origem = caminho_video(trecho["arquivo"])
     ini, fim = float(trecho["inicio"]), float(trecho["fim"])
     dur = fim - ini
@@ -236,7 +277,8 @@ def renderizar_trecho(trecho, indice, largura, altura, tem_audio, fps_origem, su
         f"[vj]split[f][b];"
         f"[b]scale={largura // 4}:{altura // 4}:force_original_aspect_ratio=increase,"
         f"crop={largura // 4}:{altura // 4},boxblur=12:2,scale={largura}:{altura},eq=brightness=-0.08[fundo];"
-        f"[f]scale={largura}:{altura}:force_original_aspect_ratio=decrease:flags=lanczos[frente];"
+        f"[f]scale={largura}:{altura}:force_original_aspect_ratio=decrease:flags=lanczos,"
+        f"unsharp=5:5:0.5:5:5:0[frente];"
         f"[fundo][frente]overlay=(W-w)/2:(H-h)/2,{correcao_de_cor(trecho['tipo'])},"
         f"setsar=1,format=yuv420p[vout]")
     filtros.append("[aj]aformat=sample_rates=48000:channel_layouts=stereo[aout]")
@@ -269,6 +311,10 @@ def montar(plano, formato, args):
     infos = {}
     trechos = []
     for i, t in enumerate(plano):
+        if eh_foto(t["arquivo"]):
+            print(f"  [{formato}] trecho {i + 1}/{len(plano)}: foto {t['arquivo']} {t['duracao']}s")
+            trechos.append(renderizar_foto(t, i, largura, altura))
+            continue
         if t["arquivo"] not in infos:
             from analisar import info_video
             infos[t["arquivo"]] = info_video(caminho_video(t["arquivo"]))
@@ -284,12 +330,14 @@ def montar(plano, formato, args):
     rotulo_v, rotulo_a = "[0:v]", "[0:a]"
     acumulado = duracoes[0]
     for k in range(1, len(trechos)):
-        trans = TRANSICOES.get(plano[k]["tipo"], "fade")
-        offset = acumulado - TRANSICAO
-        filtros.append(f"{rotulo_v}[{k}:v]xfade=transition={trans}:duration={TRANSICAO}:offset={offset:.3f}[xv{k}]")
-        filtros.append(f"{rotulo_a}[{k}:a]acrossfade=d={TRANSICAO}[xa{k}]")
+        trans, d = TRANSICOES.get(plano[k]["tipo"], ("fade", TRANSICAO))
+        trans = plano[k].get("transicao", trans)
+        d = float(plano[k].get("dur_transicao", d))
+        offset = acumulado - d
+        filtros.append(f"{rotulo_v}[{k}:v]xfade=transition={trans}:duration={d}:offset={offset:.3f}[xv{k}]")
+        filtros.append(f"{rotulo_a}[{k}:a]acrossfade=d={d}[xa{k}]")
         rotulo_v, rotulo_a = f"[xv{k}]", f"[xa{k}]"
-        acumulado += duracoes[k] - TRANSICAO
+        acumulado += duracoes[k] - d
     total = acumulado
 
     # Títulos
@@ -306,7 +354,7 @@ def montar(plano, formato, args):
     filtros.append(f"{rotulo_v}{','.join(camadas + [fade_final])},format=yuv420p[vfinal]")
 
     musicas = sorted(p for p in PASTA_MUSICA.glob("*") if p.suffix.lower() in {".mp3", ".m4a", ".wav", ".aac", ".flac", ".ogg"}) \
-        if PASTA_MUSICA.exists() else []
+        if PASTA_MUSICA.exists() and not args.sem_musica else []
     if musicas:
         entradas += ["-stream_loop", "-1", "-i", str(musicas[0])]
         m = len(trechos)
@@ -318,7 +366,7 @@ def montar(plano, formato, args):
         filtros.append(f"{rotulo_a}loudnorm=I=-16:TP=-1.5,afade=t=out:st={total - 1.5:.3f}:d=1.5[afinal]")
 
     PASTA_SAIDA.mkdir(exist_ok=True)
-    destino = PASTA_SAIDA / f"kitesurf_{formato}.mp4"
+    destino = PASTA_SAIDA / f"kitesurf_{formato}{args.sufixo}.mp4"
     cmd = ["ffmpeg", "-y", "-v", "error", *entradas, "-filter_complex", ";".join(filtros),
            "-map", "[vfinal]", "-map", "[afinal]", "-t", f"{total:.3f}",
            "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-profile:v", "high", "-pix_fmt", "yuv420p",
@@ -340,9 +388,12 @@ def main():
     ap.add_argument("--suave", action="store_true",
                     help="câmera lenta com interpolação de quadros (mais lento de renderizar)")
     ap.add_argument("--so-roteiro", action="store_true")
+    ap.add_argument("--roteiro", default="roteiro.json", help="arquivo de roteiro manual")
+    ap.add_argument("--sem-musica", action="store_true", help="ignora musica/ (só som ambiente)")
+    ap.add_argument("--sufixo", default="", help="sufixo no nome do arquivo de saída")
     args = ap.parse_args()
 
-    manual = RAIZ / "roteiro.json"
+    manual = RAIZ / args.roteiro
     if manual.exists():
         plano = json.loads(manual.read_text())
         print(f"Usando roteiro manual ({len(plano)} trechos)")
