@@ -32,12 +32,10 @@ Fotos (.jpg/.png) em `fotos/` podem entrar no roteiro com movimento lento:
 
 Cada trecho aceita também `transicao` (efeito do xfade) e `dur_transicao` (segundos) para sobrescrever o padrão do tipo.
 
-## Reels da Barrinha de Baixo (1 minuto)
+## Reels da Barrinha de Baixo (1 minuto, sem música)
 
 ```bash
-python3 editor/trilha.py --duracao 60.1 --acao 10.02 --climax 47.22 --sol 52.33 --bpm 100
-python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --volume-original 0.10 --manter-trechos
-python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --sem-musica --sufixo _sem_musica
+python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --sem-musica --sufixo _sem_musica --manter-trechos
 ```
 
-Só vídeos, sem fotos. Cada salto aparece inteiro, da aproximação até depois do pouso. A câmera lenta (`lento_de`/`lento_ate`) começa na decolagem e termina no pouso; o resto do trecho roda em velocidade normal. Os cortes da ação caem na grade de 100 bpm.
+Só vídeos, sem fotos e sem trilha (a música entra no Instagram). Abre e fecha com o mesmo pôr do sol (v14). Cada salto aparece inteiro, da aproximação até depois do pouso; a câmera lenta (`lento_de`/`lento_ate`) vai da decolagem ao pouso. O front roll do v01 usa 0,4x.

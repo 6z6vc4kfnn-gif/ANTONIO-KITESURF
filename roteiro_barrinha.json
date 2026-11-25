@@ -23,14 +23,6 @@
   "nota": "vegetação abre para a praia com os kites"
  },
  {
-  "arquivo": "v07.mp4",
-  "inicio": 4.6,
-  "fim": 7.6,
-  "tipo": "por_do_sol",
-  "dur_transicao": 0.4,
-  "nota": "entrando no mar com o kite"
- },
- {
   "arquivo": "v02.mp4",
   "inicio": 0.2,
   "fim": 2.78,
@@ -136,7 +128,14 @@
   "arquivo": "v13.mp4",
   "inicio": 18.8,
   "fim": 22.6,
-  "tipo": "encerramento",
+  "tipo": "por_do_sol",
   "nota": "kite desce até o sol no horizonte; fade final"
+ },
+ {
+  "arquivo": "v14.mp4",
+  "inicio": 0.0,
+  "fim": 4.2,
+  "tipo": "encerramento",
+  "nota": "volta o pôr do sol da abertura; fade final"
  }
 ]
