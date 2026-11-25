@@ -23,17 +23,13 @@
  },
  {
   "arquivo": "v04.mp4",
-  "inicio": 0.0,
-  "fim": 1.98,
-  "tipo": "navegacao",
-  "nota": "cortando a água com o sol"
- },
- {
-  "arquivo": "v05.mp4",
-  "inicio": 0.0,
-  "fim": 2.0,
-  "tipo": "navegacao",
-  "nota": "spray branco"
+  "inicio": 4.8,
+  "fim": 8.8,
+  "tipo": "salto",
+  "lento_de": 6.15,
+  "lento_ate": 7.85,
+  "velocidade": 0.6,
+  "nota": "salto completo contra o sol: decola 6,15 pousa 7,85"
  },
  {
   "arquivo": "v03.mp4",
@@ -73,7 +69,7 @@
  {
   "arquivo": "v11.mp4",
   "inicio": 13.3,
-  "fim": 16.3,
+  "fim": 15.3,
   "tipo": "navegacao",
   "nota": "carving contra o sol"
  },
