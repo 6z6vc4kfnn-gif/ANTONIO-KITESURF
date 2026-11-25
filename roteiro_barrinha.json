@@ -53,6 +53,14 @@
   "nota": "close sorrindo com o pôr do sol"
  },
  {
+  "arquivo": "v13.mp4",
+  "inicio": 7.0,
+  "fim": 10.0,
+  "tipo": "navegacao",
+  "dur_transicao": 0.3,
+  "nota": "outro ângulo: velejando visto da praia com o kite grande no céu"
+ },
+ {
   "arquivo": "v05.mp4",
   "inicio": 4.6,
   "fim": 7.83,
@@ -117,18 +125,11 @@
   "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3"
  },
  {
-  "arquivo": "v07.mp4",
-  "inicio": 10.0,
-  "fim": 14.6,
-  "tipo": "por_do_sol",
-  "nota": "kite no céu com o pôr do sol"
- },
- {
   "arquivo": "v13.mp4",
-  "inicio": 18.8,
+  "inicio": 16.0,
   "fim": 22.6,
   "tipo": "por_do_sol",
-  "nota": "kite desce até o sol no horizonte; fade final"
+  "nota": "velejando visto da praia, câmera sobe até o sol no horizonte"
  },
  {
   "arquivo": "v14.mp4",
