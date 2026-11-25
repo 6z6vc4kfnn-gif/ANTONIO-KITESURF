@@ -35,8 +35,8 @@ Cada trecho aceita também `transicao` (efeito do xfade) e `dur_transicao` (segu
 ## Reels da Barrinha de Baixo (1 minuto)
 
 ```bash
-python3 editor/trilha.py --duracao 59.6 --acao 10.02 --climax 47.22 --sol 51.81 --bpm 100
-python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --volume-original 0.10
+python3 editor/trilha.py --duracao 60.1 --acao 10.02 --climax 47.22 --sol 52.33 --bpm 100
+python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --volume-original 0.10 --manter-trechos
 python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --sem-musica --sufixo _sem_musica
 ```
 

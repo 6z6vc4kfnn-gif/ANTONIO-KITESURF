@@ -199,6 +199,12 @@ def correcao_de_cor(tipo):
     return f"{base},{quente},vignette=PI/5"
 
 
+def chave_trecho(trecho, suave):
+    import hashlib
+    dados = json.dumps({k: v for k, v in trecho.items() if k != "nota"}, sort_keys=True) + str(suave)
+    return hashlib.md5(dados.encode()).hexdigest()[:12]
+
+
 def renderizar_foto(trecho, indice, largura, altura):
     """Foto com movimento lento (Ken Burns): 'pan' desliza da esquerda p/ direita, 'zoom' aproxima."""
     origem = caminho_video(trecho["arquivo"])
@@ -233,7 +239,9 @@ def renderizar_trecho(trecho, indice, largura, altura, tem_audio, fps_origem, su
     ini, fim = float(trecho["inicio"]), float(trecho["fim"])
     dur = fim - ini
     lento = "lento_de" in trecho
-    saida = TEMP / f"{largura}x{altura}_{indice:03d}.mp4"
+    saida = TEMP / f"{largura}x{altura}_{chave_trecho(trecho, suave)}.mp4"
+    if saida.exists():  # trecho idêntico já renderizado (ex.: versão com e sem música)
+        return saida
 
     partes_v, partes_a, filtros = [], [], []
     if lento:
@@ -390,6 +398,8 @@ def main():
     ap.add_argument("--so-roteiro", action="store_true")
     ap.add_argument("--roteiro", default="roteiro.json", help="arquivo de roteiro manual")
     ap.add_argument("--sem-musica", action="store_true", help="ignora musica/ (só som ambiente)")
+    ap.add_argument("--manter-trechos", action="store_true",
+                    help="não apaga .trechos/ (reaproveita trechos iguais na próxima montagem)")
     ap.add_argument("--sufixo", default="", help="sufixo no nome do arquivo de saída")
     args = ap.parse_args()
 
@@ -411,7 +421,8 @@ def main():
     formatos = ["horizontal", "vertical"] if args.formato == "ambos" else [args.formato]
     for f in formatos:
         montar(plano, f, args)
-    shutil.rmtree(TEMP, ignore_errors=True)
+    if not args.manter_trechos:
+        shutil.rmtree(TEMP, ignore_errors=True)
 
 
 if __name__ == "__main__":

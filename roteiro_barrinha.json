@@ -117,13 +117,13 @@
  },
  {
   "arquivo": "v01.mov",
-  "inicio": 0.6,
-  "fim": 4.489,
+  "inicio": 1.0,
+  "fim": 4.54,
   "tipo": "climax",
-  "lento_de": 2.9,
-  "lento_ate": 4.2,
-  "velocidade": 0.5,
-  "nota": "salto 5 (4K): decola 2,9 pousa 4,2"
+  "lento_de": 2.85,
+  "lento_ate": 4.3,
+  "velocidade": 0.4,
+  "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3"
  },
  {
   "arquivo": "v07.mp4",
