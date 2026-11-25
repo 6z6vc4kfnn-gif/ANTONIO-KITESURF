@@ -15,14 +15,6 @@
   "nota": "sol atrás das casas da Barrinha"
  },
  {
-  "arquivo": "v08.mp4",
-  "inicio": 2.2,
-  "fim": 4.8,
-  "tipo": "por_do_sol",
-  "dur_transicao": 0.4,
-  "nota": "vegetação abre para a praia com os kites"
- },
- {
   "arquivo": "v02.mp4",
   "inicio": 0.2,
   "fim": 2.78,
@@ -37,13 +29,20 @@
   "nota": "cortando a água com o sol"
  },
  {
+  "arquivo": "v05.mp4",
+  "inicio": 0.0,
+  "fim": 2.0,
+  "tipo": "navegacao",
+  "nota": "spray branco"
+ },
+ {
   "arquivo": "v03.mp4",
   "inicio": 1.0,
   "fim": 4.68,
   "tipo": "salto",
   "lento_de": 2.0,
   "lento_ate": 3.9,
-  "velocidade": 0.5,
+  "velocidade": 0.6,
   "nota": "salto 1: decola 2,0 pousa 3,9"
  },
  {
@@ -60,13 +59,13 @@
   "tipo": "salto",
   "lento_de": 5.5,
   "lento_ate": 7.25,
-  "velocidade": 0.5,
+  "velocidade": 0.6,
   "nota": "salto 2: decola 5,5 pousa 7,25"
  },
  {
   "arquivo": "v11.mp4",
   "inicio": 13.3,
-  "fim": 15.28,
+  "fim": 16.3,
   "tipo": "navegacao",
   "nota": "carving contra o sol"
  },
@@ -77,13 +76,13 @@
   "tipo": "salto",
   "lento_de": 22.85,
   "lento_ate": 23.5,
-  "velocidade": 0.5,
+  "velocidade": 0.6,
   "nota": "pop: decola 22,85 pousa 23,5"
  },
  {
   "arquivo": "v09.mp4",
   "inicio": 2.0,
-  "fim": 3.98,
+  "fim": 5.0,
   "tipo": "navegacao",
   "nota": "navegando tranquilo no sol"
  },
@@ -94,7 +93,7 @@
   "tipo": "salto",
   "lento_de": 38.95,
   "lento_ate": 42.0,
-  "velocidade": 0.6,
+  "velocidade": 0.7,
   "nota": "salto 3: decola 38,95 pousa 42,0"
  },
  {
@@ -104,7 +103,7 @@
   "tipo": "salto",
   "lento_de": 13.1,
   "lento_ate": 16.6,
-  "velocidade": 0.6,
+  "velocidade": 0.7,
   "nota": "salto 4 (float longo): decola 13,1 pousa 16,6"
  },
  {
@@ -114,7 +113,7 @@
   "tipo": "climax",
   "lento_de": 2.85,
   "lento_ate": 4.3,
-  "velocidade": 0.4,
+  "velocidade": 0.5,
   "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3"
  },
  {
@@ -134,7 +133,7 @@
  {
   "arquivo": "v14.mp4",
   "inicio": 0.0,
-  "fim": 4.2,
+  "fim": 5.0,
   "tipo": "encerramento",
   "nota": "volta o pôr do sol da abertura; fade final"
  }

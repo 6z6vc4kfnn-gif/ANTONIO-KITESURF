@@ -38,4 +38,4 @@ Cada trecho aceita também `transicao` (efeito do xfade) e `dur_transicao` (segu
 python3 editor/montar.py --roteiro roteiro_barrinha.json --formato vertical --suave --sem-musica --sufixo _sem_musica --manter-trechos
 ```
 
-Só vídeos, sem fotos e sem trilha (a música entra no Instagram). Abre e fecha com o mesmo pôr do sol (v14). Cada salto aparece inteiro, da aproximação até depois do pouso; a câmera lenta (`lento_de`/`lento_ate`) vai da decolagem ao pouso. O front roll do v01 usa 0,4x.
+Só vídeos, sem fotos e sem trilha (a música entra no Instagram). Abre e fecha com o mesmo pôr do sol (v14). Cada salto aparece inteiro, da aproximação até depois do pouso; a câmera lenta (`lento_de`/`lento_ate`) vai da decolagem ao pouso. Câmera lenta: 0,6x nos saltos curtos, 0,7x nos floats longos e 0,5x no front roll do v01.
