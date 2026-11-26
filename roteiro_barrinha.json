@@ -70,6 +70,14 @@
   "rampa": 0
  },
  {
+  "arquivo": "v19.mp4",
+  "inicio": 0.0,
+  "fim": 2.8,
+  "tipo": "navegacao",
+  "dur_transicao": 0.3,
+  "nota": "visto da praia, céu em tons pastéis"
+ },
+ {
   "arquivo": "v11.mp4",
   "inicio": 13.3,
   "fim": 15.3,
@@ -129,7 +137,7 @@
  },
  {
   "arquivo": "v13.mp4",
-  "inicio": 16.0,
+  "inicio": 16.6,
   "fim": 22.6,
   "tipo": "por_do_sol",
   "nota": "velejando visto da praia, câmera sobe até o sol no horizonte"
@@ -137,7 +145,7 @@
  {
   "arquivo": "v14.mp4",
   "inicio": 0.0,
-  "fim": 5.0,
+  "fim": 4.4,
   "tipo": "encerramento",
   "nota": "volta o pôr do sol da abertura; fade final"
  }
