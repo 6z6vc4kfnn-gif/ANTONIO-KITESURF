@@ -248,10 +248,22 @@ def renderizar_trecho(trecho, indice, largura, altura, tem_audio, fps_origem, su
         a = max(0.0, float(trecho["lento_de"]) - ini)
         b = min(dur, float(trecho["lento_ate"]) - ini)
         vel_lenta = float(trecho.get("velocidade", 0.5))
-        cortes = [(0, a, 1.0), (a, b, vel_lenta), (b, dur, 1.0)]
+        # Rampa de velocidade: desacelera e acelera em degraus curtos para a câmera lenta
+        # entrar e sair de forma natural (sem salto brusco 1x -> lento -> 1x).
+        rampa = float(trecho.get("rampa", 0.3))
+        passos = [1 - (1 - vel_lenta) * k / 4 for k in (1, 2, 3)]  # ex.: 0.94, 0.88, 0.81 p/ 0.75
+        r = min(rampa, (b - a) / 3) / 3
+        cortes = [(0, max(0.0, a - 3 * r), 1.0)]
+        x = max(0.0, a - 3 * r)
+        for v in passos:
+            cortes.append((x, x + r, v)); x += r
+        cortes.append((x, b - 3 * r, vel_lenta)); x = b - 3 * r
+        for v in reversed(passos):
+            cortes.append((x, x + r, v)); x += r
+        cortes.append((x, dur, 1.0))
     else:
         cortes = [(0, dur, 1.0)]
-    cortes = [c for c in cortes if c[1] - c[0] > 0.05]
+    cortes = [c for c in cortes if c[1] - c[0] > 0.02]
     n = len(cortes)
     filtros.append(f"[0:v]fps={max(FPS, round(fps_origem))},split={n}" + "".join(f"[vs{k}]" for k in range(n)))
     if tem_audio:
