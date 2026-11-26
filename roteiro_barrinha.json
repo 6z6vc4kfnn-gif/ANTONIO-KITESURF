@@ -26,20 +26,22 @@
   "inicio": 4.8,
   "fim": 8.8,
   "tipo": "salto",
-  "lento_de": 6.15,
-  "lento_ate": 7.85,
-  "velocidade": 0.6,
-  "nota": "salto completo contra o sol: decola 6,15 pousa 7,85"
+  "lento_de": 4.8,
+  "lento_ate": 8.8,
+  "velocidade": 0.75,
+  "nota": "salto completo contra o sol: decola 6,15 pousa 7,85",
+  "rampa": 0
  },
  {
   "arquivo": "v03.mp4",
   "inicio": 1.0,
   "fim": 4.68,
   "tipo": "salto",
-  "lento_de": 2.0,
-  "lento_ate": 3.9,
-  "velocidade": 0.6,
-  "nota": "salto 1: decola 2,0 pousa 3,9"
+  "lento_de": 1.0,
+  "lento_ate": 4.68,
+  "velocidade": 0.75,
+  "nota": "salto 1: decola 2,0 pousa 3,9",
+  "rampa": 0
  },
  {
   "arquivo": "v10.mp4",
@@ -61,10 +63,11 @@
   "inicio": 4.6,
   "fim": 7.83,
   "tipo": "salto",
-  "lento_de": 5.5,
-  "lento_ate": 7.25,
-  "velocidade": 0.6,
-  "nota": "salto 2: decola 5,5 pousa 7,25"
+  "lento_de": 4.6,
+  "lento_ate": 7.83,
+  "velocidade": 0.75,
+  "nota": "salto 2: decola 5,5 pousa 7,25",
+  "rampa": 0
  },
  {
   "arquivo": "v11.mp4",
@@ -78,10 +81,11 @@
   "inicio": 22.2,
   "fim": 24.13,
   "tipo": "salto",
-  "lento_de": 22.85,
-  "lento_ate": 23.5,
-  "velocidade": 0.6,
-  "nota": "pop: decola 22,85 pousa 23,5"
+  "lento_de": 22.2,
+  "lento_ate": 24.13,
+  "velocidade": 0.75,
+  "nota": "pop: decola 22,85 pousa 23,5",
+  "rampa": 0
  },
  {
   "arquivo": "v09.mp4",
@@ -95,30 +99,33 @@
   "inicio": 38.2,
   "fim": 42.947,
   "tipo": "salto",
-  "lento_de": 38.95,
-  "lento_ate": 42.0,
-  "velocidade": 0.7,
-  "nota": "salto 3: decola 38,95 pousa 42,0"
+  "lento_de": 38.2,
+  "lento_ate": 42.947,
+  "velocidade": 0.75,
+  "nota": "salto 3: decola 38,95 pousa 42,0",
+  "rampa": 0
  },
  {
   "arquivo": "v02.mp4",
   "inicio": 11.8,
   "fim": 17.566,
   "tipo": "salto",
-  "lento_de": 13.1,
-  "lento_ate": 16.6,
-  "velocidade": 0.7,
-  "nota": "salto 4 (float longo): decola 13,1 pousa 16,6"
+  "lento_de": 11.8,
+  "lento_ate": 17.566,
+  "velocidade": 0.75,
+  "nota": "salto 4 (float longo): decola 13,1 pousa 16,6",
+  "rampa": 0
  },
  {
   "arquivo": "v01.mov",
   "inicio": 1.0,
   "fim": 4.54,
   "tipo": "climax",
-  "lento_de": 2.85,
-  "lento_ate": 4.3,
-  "velocidade": 0.5,
-  "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3"
+  "lento_de": 1.0,
+  "lento_ate": 4.54,
+  "velocidade": 0.7,
+  "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3",
+  "rampa": 0
  },
  {
   "arquivo": "v13.mp4",
