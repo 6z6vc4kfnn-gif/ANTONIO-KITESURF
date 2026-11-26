@@ -59,15 +59,17 @@
   "nota": "outro ângulo: velejando visto da praia com o kite grande no céu"
  },
  {
-  "arquivo": "v05.mp4",
-  "inicio": 4.6,
-  "fim": 7.83,
+  "arquivo": "v01.mov",
+  "inicio": 1.0,
+  "fim": 4.54,
   "tipo": "salto",
-  "lento_de": 4.6,
-  "lento_ate": 7.83,
-  "velocidade": 0.75,
-  "nota": "salto 2: decola 5,5 pousa 7,25",
-  "rampa": 0
+  "lento_de": 1.0,
+  "lento_ate": 4.54,
+  "velocidade": 0.7,
+  "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3",
+  "rampa": 0,
+  "transicao": "fadewhite",
+  "dur_transicao": 0.3
  },
  {
   "arquivo": "v19.mp4",
@@ -125,14 +127,14 @@
   "rampa": 0
  },
  {
-  "arquivo": "v01.mov",
-  "inicio": 1.0,
-  "fim": 4.54,
-  "tipo": "climax",
-  "lento_de": 1.0,
-  "lento_ate": 4.54,
-  "velocidade": 0.7,
-  "nota": "FRONT ROLL (4K): como na 1ª versão, câmera lenta 0,4x de 2,85 a 4,3",
+  "arquivo": "v05.mp4",
+  "inicio": 4.6,
+  "fim": 8.6,
+  "tipo": "salto",
+  "lento_de": 4.6,
+  "lento_ate": 8.6,
+  "velocidade": 0.75,
+  "nota": "salto completo até o pouso e a saída navegando (antes do pôr do sol final)",
   "rampa": 0
  },
  {
