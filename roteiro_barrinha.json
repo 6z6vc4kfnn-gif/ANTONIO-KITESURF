@@ -136,17 +136,14 @@
   "rampa": 0
  },
  {
-  "arquivo": "v13.mp4",
-  "inicio": 16.6,
-  "fim": 22.6,
-  "tipo": "por_do_sol",
-  "nota": "velejando visto da praia, câmera sobe até o sol no horizonte"
- },
- {
   "arquivo": "v14.mp4",
   "inicio": 0.0,
-  "fim": 4.4,
+  "fim": 5.0,
   "tipo": "encerramento",
-  "nota": "volta o pôr do sol da abertura; fade final"
+  "nota": "pôr do sol da abertura, um pouco mais lento; fade final",
+  "lento_de": 0.0,
+  "lento_ate": 5.0,
+  "velocidade": 0.75,
+  "rampa": 0
  }
 ]
